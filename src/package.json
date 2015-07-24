@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "main": "index.html",
   "window": {
-    "frame": false,
+    "frame": true,
     "toolbar": false
   }
 }
