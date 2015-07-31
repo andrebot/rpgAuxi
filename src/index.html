@@ -1,17 +1,29 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Hello World!</title>
-    <link rel="stylesheet" href="../node_modules/angular-material/angular-material.css">
-</head>
-<body style="-webkit-app-region: drag">
-    <h1>Hello World!</h1>
-    We are using node.js <script>document.write(process.version)</script>.
+<html ng-app="RpgAuxApp">
+    <head>
+        <title>Hello World!</title>
 
-    <script src="../node_modules/angular/angular.js"></script>
-    <script src="../node_modules/angular-aria/angular-aria.js"></script>
-    <script src="../node_modules/angular-animate/angular-animate.js"></script>
-    <script src="../node_modules/angular-material/angular-material.js"></script>
+        <!-- Including libs -->
+        <link rel="stylesheet" href="lib/css/materialize.css">
+        <!-- End libs -->
 
-</body>
+        <!-- App CSS -->
+        <link rel="stylesheet" href="app.css">
+        <!-- End App CSS-->
+    </head>
+    <body>
+
+        <!-- View container -->
+        <div ng-view></div>
+        <!-- End View container -->
+
+        <!-- Including libs -->
+        <script src="lib/js/jquery.min.js"></script>
+        <script src="lib/js/materialize.js"></script>
+        <!-- End libs -->
+
+        <!-- App -->
+        <script src="app.js"></script>
+        <!-- End App -->
+    </body>
 </html>
