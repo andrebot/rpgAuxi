@@ -1,6 +1,9 @@
 .idea
+.DS_Store
 RPGAuxi.nw
 src/lib
 node_modules
 cache
 dist
+src/app.js
+src/app.css

@@ -4,14 +4,12 @@ module.exports = function(grunt){
         copy: {
             jsFiles: {
                 files: [
-                    //{expand: true, flatten: true, src: ['node_modules/angular-*/*.min.js', 'node_modules/angular-*/*.min.js.map'], dest: 'src/lib/js'}
                     {expand: true, flatten: true, src: ['node_modules/jquery/dist/jquery.min.js', 'node_modules/jquery/dist/jquery.min.map'], dest: 'src/lib/js'},
                     {expand: true, flatten: true, src: ['node_modules/materialize-css/bin/materialize.js'], dest: 'src/lib/js'}
                 ]
             },
             cssFiles: {
                 files: [
-                    //{expand: true, flatten: true, src: ['node_modules/angular-material/angular-material.min.css'], dest: 'src/lib/css'}
                     {expand: true, flatten: true, src: ['node_modules/materialize-css/bin/materialize.css'], dest: 'src/lib/css'}
                 ]
             },
