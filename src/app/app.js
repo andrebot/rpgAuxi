@@ -1,3 +1,3 @@
 (function(){
-    angular.module('RpgAuxApp', ['ngRoute']);
+    //angular.module('RpgAuxApp', ['ngRoute']);
 })();
