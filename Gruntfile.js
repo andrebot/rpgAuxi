@@ -5,7 +5,8 @@ module.exports = function(grunt){
             jsFiles: {
                 files: [
                     {expand: true, flatten: true, src: ['node_modules/jquery/dist/jquery.min.js', 'node_modules/jquery/dist/jquery.min.map'], dest: 'src/lib/js'},
-                    {expand: true, flatten: true, src: ['node_modules/materialize-css/bin/materialize.js'], dest: 'src/lib/js'}
+                    {expand: true, flatten: true, src: ['node_modules/materialize-css/bin/materialize.js'], dest: 'src/lib/js'},
+                    {expand: true, flatten: true, src: ['node_modules/knockout/build/output/knockout-latest.js'], dest: 'src/lib/js'}
                 ]
             },
             cssFiles: {
@@ -43,4 +44,6 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-nw-builder');
 
     grunt.registerTask('build', ['copy', 'concat', 'nwjs']);
+
+    grunt.registerTask('compile', ['concat']);
 };

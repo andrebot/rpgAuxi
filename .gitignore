@@ -1,7 +1,10 @@
 .idea
 .DS_Store
 RPGAuxi.nw
-src/lib
+src/lib/css
+src/lib/js
+src/lib/font/material-design-icons
+src/lib/font/roboto
 node_modules
 cache
 dist
