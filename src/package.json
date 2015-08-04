@@ -4,6 +4,8 @@
   "main": "index.html",
   "window": {
     "frame": true,
-    "toolbar": true
+    "toolbar": true,
+    "min_width": 800,
+    "width": 800
   }
 }
