@@ -23,7 +23,7 @@
         this.races = [new Race('Dwarf'), new Race('Elf'), new Race('Gnome'), new Race('Half-Elf'), new Race('Halfling'),
             new Race('Half-Orc'), new Race('Human')];
 
-        this.selectedRace = ko.observable(this.races[0]);
+        this.selectedRace = ko.observable();
 
         this.selectRace = function(race, evt) {
             this.selectedRace(race);

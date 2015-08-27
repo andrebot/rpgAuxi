@@ -5,7 +5,7 @@
 
     <!-- Including libs -->
     <link rel="stylesheet" href="../lib/css/materialize.css">
-    <link rel="stylesheet" href="../lib/css/material-icons.css">
+    <link rel="stylesheet" href="../styles/material-icons.css">
     <!-- End libs -->
 
     <!-- App CSS -->
@@ -25,8 +25,8 @@
 
 <div class="row">
     <div class="col s4">
-        <div class="card-panel races-holder" data-bind="foreach: races, mouseLeave">
-            <div class="row valign-wrapper race" data-bind="click: $parent.selectRace, mouseOver, mouseLeave">
+        <div class="card-panel races-holder" data-bind="foreach: races">
+            <div class="row valign-wrapper race hoverable" data-bind="click: $parent.selectRace">
                 <div class="col s3">
                     <img alt="" class="circle" data-bind="attr: {src: '../imgs/'+ maleFaceImg}">
                 </div>
@@ -38,15 +38,21 @@
     </div>
     <div class="col s8">
         <div class="card-panel races-holder">
+          <!-- ko if: selectedRace -->
+            <div class="row">
+              <div class="col s12">
+                <h3 class="center-align" data-bind="text: selectedRace().name"></h3>
+              </div>
+            </div>
             <div class="row">
                 <div class="col s8">
                     <img alt="" data-bind="attr: {src: '../imgs/'+ selectedRace().maleBodyImg}">
                 </div>
                 <div class="col s4">
-                    <h3>Description</h3>
                     <p data-bind="text: selectedRace().description"></p>
                 </div>
             </div>
+          <!-- /ko-->
         </div>
     </div>
 </div>
