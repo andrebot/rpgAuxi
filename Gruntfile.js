@@ -22,12 +22,18 @@ module.exports = function(grunt){
         },
         concat: {
             appJs: {
-                src: ['src/**/*.js', '!src/lib/**/*', '!src/app.js'],
+                src: ['src/**/*.js', '!src/lib/**/*', '!src/app.js', '!src/models/*'],
                 dest: 'src/app.js'
             },
             appCss: {
                 src: ['src/styles/*.css'],
                 dest: 'src/app.css'
+            }
+        },
+        watch: {
+            scripts: {
+                files: ['src/createCharacter/*','src/models/*', 'src/styles/*'],
+                tasks: ['concat']
             }
         },
         nwjs: {
@@ -40,10 +46,13 @@ module.exports = function(grunt){
     });
 
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-nw-builder');
 
     grunt.registerTask('build', ['copy', 'concat', 'nwjs']);
 
     grunt.registerTask('compile', ['concat']);
+
+    grunt.registerTask('default', ['concat', 'watch']);
 };

@@ -1,7 +1,7 @@
 {
   "name": "RPGAux",
   "version": "0.0.1",
-  "main": "index.html",
+  "main": "createCharacter/createCharacterWindow.html",
   "window": {
     "frame": true,
     "toolbar": true,
