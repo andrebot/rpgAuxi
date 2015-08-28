@@ -24,6 +24,7 @@
             new Race('Half-Orc'), new Race('Human')];
 
         this.selectedRace = ko.observable();
+        this.selectedSex = ko.observable('male');
 
         this.selectRace = function(race, evt) {
             this.selectedRace(race);

@@ -24,6 +24,20 @@
 </nav>
 
 <div class="row">
+  <div class="col s12">
+    <div class="card-panel center-align">
+      <span>
+        <input name="sexRadio" type="radio" id="male" data-bind="checked: selectedSex" value="male">
+        <label for="male">Male</label>
+      </span>
+      <span>
+        <input name="sexRadio" type="radio" id="female" data-bind="checked: selectedSex" value="female">
+        <label for="female">Female</label>
+      </span>
+    </div>
+  </div>
+</div>
+<div class="row">
     <div class="col s4">
         <div class="card-panel races-holder" data-bind="foreach: races">
             <div class="row valign-wrapper race hoverable" data-bind="click: $parent.selectRace">
