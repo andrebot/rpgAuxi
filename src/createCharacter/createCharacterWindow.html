@@ -39,8 +39,10 @@
 </div>
 <div class="row">
     <div class="col s4">
-        <div class="card-panel races-holder" data-bind="foreach: races">
-            <div class="row valign-wrapper race hoverable" data-bind="click: $parent.selectRace">
+        <div class="card-panel races-holder" data-bind="mouseLeave">
+            <h5 class="choose-race-title">Choose one...</h5>
+            <!-- ko foreach: races -->
+            <div class="row valign-wrapper race hoverable" data-bind="click: $parent.selectRace, mouseOver">
                 <div class="col s3">
                     <img alt="" class="circle" data-bind="attr: {src: '../imgs/'+ maleFaceImg}">
                 </div>
@@ -48,21 +50,18 @@
                     <span class="black-text" data-bind="text: name"></span>
                 </div>
             </div>
+            <!-- /ko -->
         </div>
     </div>
     <div class="col s8">
         <div class="card-panel races-holder">
           <!-- ko if: selectedRace -->
             <div class="row">
-              <div class="col s12">
-                <h3 class="center-align" data-bind="text: selectedRace().name"></h3>
-              </div>
-            </div>
-            <div class="row">
                 <div class="col s8">
                     <img alt="" data-bind="attr: {src: '../imgs/'+ selectedRace().maleBodyImg}">
                 </div>
                 <div class="col s4">
+                    <h3 class="center-align" data-bind="text: selectedRace().name"></h3>
                     <p data-bind="text: selectedRace().description"></p>
                 </div>
             </div>

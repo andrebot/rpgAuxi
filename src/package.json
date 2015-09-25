@@ -6,6 +6,8 @@
     "frame": true,
     "toolbar": true,
     "min_width": 800,
-    "width": 800
+    "min_height": 850,
+    "width": 1200,
+    "height": 870
   }
 }
