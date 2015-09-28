@@ -1,3 +1,11 @@
 .choose-race-title {
     margin: 0.50rem 0 0.333rem 0;
 }
+
+.races-holder {
+    min-height: 646px;
+}
+
+.race-description {
+    height: 646px;
+}

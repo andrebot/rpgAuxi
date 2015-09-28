@@ -27,11 +27,11 @@
   <div class="col s12">
     <div class="card-panel center-align">
       <span>
-        <input name="sexRadio" type="radio" id="male" data-bind="checked: selectedSex" value="male">
+        <input name="sexRadio" type="radio" id="male" data-bind="click: selectSex" checked value="male">
         <label for="male">Male</label>
       </span>
       <span>
-        <input name="sexRadio" type="radio" id="female" data-bind="checked: selectedSex" value="female">
+        <input name="sexRadio" type="radio" id="female" data-bind="click: selectSex" value="female">
         <label for="female">Female</label>
       </span>
     </div>
@@ -44,7 +44,7 @@
             <!-- ko foreach: races -->
             <div class="row valign-wrapper race hoverable" data-bind="click: $parent.selectRace, mouseOver">
                 <div class="col s3">
-                    <img alt="" class="circle" data-bind="attr: {src: '../imgs/'+ maleFaceImg}">
+                    <img alt="" class="circle" data-bind="attr: {src: '../imgs/'+ createImageName('Face', $parent.selectedSex())}">
                 </div>
                 <div class="col s9">
                     <span class="black-text" data-bind="text: name"></span>
@@ -54,11 +54,11 @@
         </div>
     </div>
     <div class="col s8">
-        <div class="card-panel races-holder">
+        <div class="card-panel race-description">
           <!-- ko if: selectedRace -->
             <div class="row">
                 <div class="col s8">
-                    <img alt="" data-bind="attr: {src: '../imgs/'+ selectedRace().maleBodyImg}">
+                    <img alt="" data-bind="attr: {src: '../imgs/'+ selectedRace().createImageName('Body', selectedSex())}">
                 </div>
                 <div class="col s4">
                     <h3 class="center-align" data-bind="text: selectedRace().name"></h3>
