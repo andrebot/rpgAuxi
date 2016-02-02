@@ -1,7 +1,7 @@
 {
   "name": "RPGAux",
   "version": "0.0.1",
-  "main": "createCharacter/createCharacterWindow.html",
+  "main": "createRace/createRaceWindow.html",
   "window": {
     "frame": true,
     "toolbar": true,
@@ -9,5 +9,9 @@
     "min_height": 850,
     "width": 1200,
     "height": 870
+  },
+  "dependencies": {
+    "kerberos": "0.0.18",
+    "mongoose": "^4.3.7"
   }
 }

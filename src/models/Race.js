@@ -1,25 +1,34 @@
-function Race (name) {
-    this.name = name;
-    this.maleFaceImg = this.createImageName('Face', 'Male');
-    this.femaleFaceImg = this.createImageName('Face', 'Female');
-    this.maleBodyImg = this.createImageName('Body', 'Male');
-    this.femaleBodyImg = this.createImageName('Body', 'Female');
-    this.description = descriptions[name];
+'use strict';
 
-}
+let mongoose = require('mongoose');
+let Schema   = mongoose.Schema;
 
-Race.prototype.createImageName = function (sufix, sex) {
-    return sex + this.name.replace('-', '') + sufix + '.png';
-};
+let race = new Schema({
+  name: {type: String, require: true},
+  description: {type: String, require: true},
+  size: {
+    name:     {type: String, require: true},
+    modifier: {type: Number, require: true},
+    movement: {type: Number, require: true}
+  },
+  languages: [String],
+  weaponsFamiliarity: [String]
+});
 
-var descriptions = {
-  'Dwarf': 'Dwarfs are strong.',
-  'Elf': 'Elfs are slim and cunnig.',
-  'Gnome': 'Gnomes are magical creatures.',
-  'Half-Elf': 'Half-Human and Half-Elfs, they are eager to learn and kind.',
-  'Halfling': 'Halfling are hard to detect. If they want, they can sneaky under your nose without being noticed.',
-  'Half-Orc': 'Half-Human Half-Ord, they are strong and sevage, but with a minimal amount of brain to being able to breath and count to ten.',
-  'Human': 'Human are boring.'
-};
+race.virtual('maleFaceImg').get(function () {
+  return `Male${this.name.replace('-', '')}Face.png`;
+});
 
-module.exports = Race;
+race.virtual('femaleFaceImg').get(function () {
+  return `Female${this.name.replace('-', '')}Face.png`;
+});
+
+race.virtual('maleBodyImg').get(function () {
+  return `Male${this.name.replace('-', '')}Body.png`;
+});
+
+race.virtual('femaleBodyImg').get(function () {
+  return `Female${this.name.replace('-', '')}Body.png`;
+});
+
+module.exports = mongoose.model('Race', race);

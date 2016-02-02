@@ -3,7 +3,7 @@
   "description": "An application to help RPG players in their day-to-day games",
   "main": "src/index.html",
   "scripts": {
-    "preinstall": "npm install grunt-cli -g",
+    "preinstall": "sudo apt-get install libkrb5-dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

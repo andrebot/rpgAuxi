@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create Size</title>
+
+        <!-- Including libs -->
+        <link rel="stylesheet" href="../lib/css/materialize.css">
+        <link rel="stylesheet" href="../styles/material-icons.css">
+        <!-- End libs -->
+
+        <!-- App CSS -->
+        <link rel="stylesheet" href="createSize.css">
+        <!-- End App CSS-->
+    </head>
+    <body>
+
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">Size Details</a>
+                <ul class="right">
+                    <li><a href="#" data-bind="click: save"><i class="material-icons right">note_add</i>Save</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="card-panel">
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="sizeName" name="sizeName" type="text" class="validate" data-bind="textInput: size.name"/>
+                            <label for="sizeName" data-error="Please add a name to the size">Name:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="sizeModifier" name="sizeModifier" type="number" data-bind="textInput: size.modifier"/>
+                            <label for="sizeModifier">Modifier:</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="sizeMovement" name="sizeMovement" type="number" min="0" data-bind="textInput: size.movement"/>
+                            <label for="sizeMovement">Movement (meters):</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="errorModal" class="modal">
+            <div class="modal-content">
+                <h4>Error</h4>
+                <ul class="content"></ul>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+            </div>
+        </div>
+
+        <!-- Including libs -->
+        <script src="../lib/js/jquery.min.js"></script>
+        <script src="../lib/js/materialize.js"></script>
+        <script src="../lib/js/knockout-latest.js"></script>
+        <!-- End libs -->
+
+        <!-- App -->
+        <script src="createSize.js"></script>
+        <!-- End App -->
+    </body>
+</html>

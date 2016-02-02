@@ -1,5 +1,7 @@
+'use strict';
+
 (function(){
-    var Race = require('../models/Race');
+    let Race = require('../models/Race');
 
     ko.bindingHandlers.mouseOver = {
         init: function(element) {
@@ -24,7 +26,7 @@
             new Race('Half-Orc'), new Race('Human')];
 
         this.selectedRace = ko.observable();
-        this.selectedSex = ko.observable('male');
+        this.selectedSex = ko.observable('Male');
 
         this.selectRace = function(race, evt) {
             this.selectedRace(race);
@@ -35,17 +37,17 @@
         }.bind(this);
 
         this.selectSex = function(sex, evt) {
-            var numberOfRaces = this.races.length;
-            var racesElements = $('div.race');
-            var selectedSex = this.selectedSex;
-            var selectedRace = this.selectedRace;
+            let numberOfRaces = this.races.length;
+            let racesElements = $('div.race');
+            let selectedSex = this.selectedSex;
+            let selectedRace = this.selectedRace;
 
             if($(evt.currentTarget).prop('value') === selectedSex()) {
                 return true;
             }
 
             racesElements.reverse().each(function(index){
-                var race = $(this);
+                let race = $(this);
                 setTimeout(function(){
                     if(index === numberOfRaces - 1) {
                         race.animate({width:'toggle'},350, function(){
@@ -57,7 +59,7 @@
                             });
                         }
                         racesElements.reverse().each(function(index2){
-                            var race2 = $(this);
+                            let race2 = $(this);
                             setTimeout(function(){
                                 race2.animate({width:'toggle'},350);
                             }, 250*(index2 + 1));
