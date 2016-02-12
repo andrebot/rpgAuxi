@@ -6,11 +6,7 @@ let Schema   = mongoose.Schema;
 let race = new Schema({
   name: {type: String, require: true},
   description: {type: String, require: true},
-  size: {
-    name:     {type: String, require: true},
-    modifier: {type: Number, require: true},
-    movement: {type: Number, require: true}
-  },
+  size: {type: Schema.ObjectId, ref: 'Sizes'},
   languages: [String],
   weaponsFamiliarity: [String]
 });

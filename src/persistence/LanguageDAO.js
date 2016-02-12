@@ -1,36 +1,36 @@
 'use strict';
 
-let Size = require('../models/Size');
+let Language = require('../models/Language');
 
-class SizeDAO {
+class LanguageDAO {
   constructor () {
   }
 
   findAll () {
     return new Promise(function (fulfill, reject) {
-      Size.find({}, function (error, sizes) {
+      Language.find({}, function (error, languages) {
         if (error) {
           reject(error);
         } else {
-          fulfill(sizes);
+          fulfill(languages);
         }
       });
     });
   }
 
-  save (size) {
+  save (language) {
     return new Promise(function (fulfill, reject) {
-      let newSize = new Size(size);
+      let newLanguage = new Language(language);
 
-      newSize.save(function (error) {
+      newLanguage.save(function (error) {
         if (error) {
           reject(error);
         } else {
-          fulfill(newSize);
+          fulfill(newLanguage);
         }
       });
     });
   }
 }
 
-module.exports = SizeDAO;
+module.exports = LanguageDAO;
