@@ -1,7 +1,7 @@
 {
   "name": "RPGAux",
   "version": "0.0.1",
-  "main": "createLanguage/window.html",
+  "main": "windows/createLanguage/window.html",
   "window": {
     "frame": true,
     "toolbar": true,

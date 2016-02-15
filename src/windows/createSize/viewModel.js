@@ -1,7 +1,7 @@
 'use strict';
 
 (function () {
-  let SizeDAO = require('../persistence/SizeDAO');
+  let SizeDAO = require('../../persistence/SizeDAO');
 
   class Size {
     constructor(name, modifier, movement) {

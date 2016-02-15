@@ -1,9 +1,7 @@
 'use strict';
 
 (function () {
-  let LanguageDAO = require('../persistence/LanguageDAO');
-  let mongoose    = require('mongoose');
-  mongoose.connect('mongodb://localhost:27017/rpgAuxi');
+  let LanguageDAO = require('../../persistence/LanguageDAO');
 
   class Language {
     constructor(name, description) {

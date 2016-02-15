@@ -1,7 +1,7 @@
 'use strict';
 
 (function(){
-    let Race = require('../models/Race');
+    let Race = require('../../models/Race');
 
     ko.bindingHandlers.mouseOver = {
         init: function(element) {

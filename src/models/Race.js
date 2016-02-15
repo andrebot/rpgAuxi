@@ -4,8 +4,8 @@ let mongoose = require('mongoose');
 let Schema   = mongoose.Schema;
 
 let race = new Schema({
-  name: {type: String, require: true},
-  description: {type: String, require: true},
+  name: {type: String, required: true},
+  description: {type: String, required: true},
   size: {type: Schema.ObjectId, ref: 'Sizes'},
   languages: [String],
   weaponsFamiliarity: [String]
@@ -27,4 +27,4 @@ race.virtual('femaleBodyImg').get(function () {
   return `Female${this.name.replace('-', '')}Body.png`;
 });
 
-module.exports = mongoose.model('Race', race);
+module.exports = mongoose.model('Races', race);
