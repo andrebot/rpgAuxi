@@ -1,0 +1,13 @@
+/** Helpers/Messaging.js **/
+
+.toast-warning {
+  background-color: #ff8a65;
+}
+
+.toast-error {
+  background-color: #ef5350;
+}
+
+.toast-success {
+  background-color: #8bc34a;
+}

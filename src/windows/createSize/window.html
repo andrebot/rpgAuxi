@@ -4,11 +4,12 @@
         <title>Create Size</title>
 
         <!-- Including libs -->
-        <link rel="stylesheet" href="../lib/css/materialize.css">
-        <link rel="stylesheet" href="../styles/material-icons.css">
+        <link rel="stylesheet" href="../../lib/css/materialize.css">
+        <link rel="stylesheet" href="../../styles/material-icons.css">
         <!-- End libs -->
 
         <!-- App CSS -->
+        <link rel="stylesheet" href="../../global.css">
         <link rel="stylesheet" href="style.css">
         <!-- End App CSS-->
     </head>
@@ -27,39 +28,41 @@
             <div class="row">
                 <form class="col s12">
                     <div class="row">
-                        <div class="input-field col s12">
+                        <div class="input-field col s6">
                             <input id="sizeName" name="sizeName" type="text" class="validate" data-bind="textInput: size.name"/>
                             <label for="sizeName" data-error="Please add a name to the size">Name:</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <input id="sizeModifier" name="sizeModifier" type="number" data-bind="textInput: size.modifier"/>
-                            <label for="sizeModifier">Modifier:</label>
                         </div>
                         <div class="input-field col s6">
                             <input id="sizeMovement" name="sizeMovement" type="number" min="0" data-bind="textInput: size.movement"/>
                             <label for="sizeMovement">Movement (meters):</label>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col s6">
+                            <ul class="collection with-header">
+                                <li class="collection-header">Size Modifiers:</li>
+                                <!-- ko foreach: size.modifiersArray -->
+                                    <a href="#!" class="collection-item">Alvin</a>
+                                <!-- /ko -->
+                            </ul>
+                        </div>
+                        <div class="col s6">
+                            <ul class="collection with-header">
+                                <li class="collection-header">Modifiers Available:</li>
+                                <!-- ko foreach: modifiersAvailable -->
+                                    <a href="#!" class="collection-item">Alvin</a>
+                                <!-- /ko -->
+                            </ul>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
 
-        <div id="errorModal" class="modal">
-            <div class="modal-content">
-                <h4>Error</h4>
-                <ul class="content"></ul>
-            </div>
-            <div class="modal-footer">
-                <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-            </div>
-        </div>
-
         <!-- Including libs -->
-        <script src="../lib/js/jquery.min.js"></script>
-        <script src="../lib/js/materialize.js"></script>
-        <script src="../lib/js/knockout-latest.js"></script>
+        <script src="../../lib/js/jquery.min.js"></script>
+        <script src="../../lib/js/materialize.js"></script>
+        <script src="../../lib/js/knockout-latest.js"></script>
         <!-- End libs -->
 
         <!-- App -->

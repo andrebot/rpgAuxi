@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create Modifier</title>
+
+        <!-- Including libs -->
+        <link rel="stylesheet" href="../../lib/css/materialize.css">
+        <link rel="stylesheet" href="../../styles/material-icons.css">
+        <!-- End libs -->
+
+        <!-- App CSS -->
+        <link rel="stylesheet" href="../../global.css">
+        <link rel="stylesheet" href="style.css">
+        <!-- End App CSS-->
+    </head>
+    <body>
+
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">Modifier Details</a>
+                <ul class="right">
+                    <li><a href="#" data-bind="click: save"><i class="material-icons right">note_add</i>Save</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="card-panel">
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s4">
+                            <input id="modifierName" name="modifierName" type="text" class="validate" data-bind="textInput: modifier.name"/>
+                            <label for="modifierName" data-error="Please add a name to the modifier">Name:</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="modifierValue" name="modifierValue" type="number" min="0" data-bind="textInput: modifier.value"/>
+                            <label for="modifierValue">Value:</label>
+                        </div>
+                        <div class="col s4">
+                            <div class="switch">
+                                <label>
+                                    Don't Stack
+                                    <input type="checkbox" data-bind="checked: modifier.stack"/>
+                                    <span class="lever"></span>
+                                    Stack
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <select data-bind="options: modifierTypes, optionsCaption: 'Choose your type', value: modifier.type"></select>
+                            <label>Modifier's Type</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="modifierDescription" name="modifierDescription" class="materialize-textarea" data-bind="textInput: modifier.description"></textarea>
+                            <label for="modifierDescription">Description:</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Including libs -->
+        <script src="../../lib/js/jquery.min.js"></script>
+        <script src="../../lib/js/materialize.js"></script>
+        <script src="../../lib/js/knockout-latest.js"></script>
+        <!-- End libs -->
+
+        <!-- App -->
+        <script src="viewModel.js"></script>
+        <!-- End App -->
+    </body>
+</html>

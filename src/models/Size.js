@@ -1,12 +1,12 @@
 'use strict';
 
 let mongoose = require('mongoose');
-let Schema = mongoose.Schema;
+let Schema   = mongoose.Schema;
 
 let size = new Schema({
-  name:     {type: String, required: true},
-  modifier: {type: Number, required: true},
-  movement: {type: Number, required: true, min: 0}
+  name:      {type: String, required: true},
+  movement:  {type: Number, required: true, min: 0},
+  modifiers: {},
 });
 
 size.path('name').validate(function (name) {

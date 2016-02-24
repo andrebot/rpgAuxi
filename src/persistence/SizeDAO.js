@@ -1,35 +1,11 @@
 'use strict';
 
-let Size = require('../models/Size');
+var Size = require('../models/Size');
+var DataAccessObject = require('./DataAccessObject');
 
-class SizeDAO {
+class SizeDAO extends DataAccessObject {
   constructor () {
-  }
-
-  findAll () {
-    return new Promise(function (fulfill, reject) {
-      Size.find({}, function (error, sizes) {
-        if (error) {
-          reject(error);
-        } else {
-          fulfill(sizes);
-        }
-      });
-    });
-  }
-
-  save (size) {
-    return new Promise(function (fulfill, reject) {
-      let newSize = new Size(size);
-
-      newSize.save(function (error) {
-        if (error) {
-          reject(error);
-        } else {
-          fulfill(newSize);
-        }
-      });
-    });
+    super(Size);
   }
 }
 

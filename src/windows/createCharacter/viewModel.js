@@ -21,9 +21,37 @@
         }
     };
 
+    class RaceModel {
+        constructor(name, description) {
+          this.name = ko.observable(name);
+          this.description = ko.observable(description);
+        }
+
+        maleFaceImg () {
+          return `Male${this.name().replace('-', '')}Face.png`;
+        }
+
+        femaleFaceImg () {
+          return `Female${this.name().replace('-', '')}Face.png`;
+        }
+
+        maleBodyImg () {
+          return `Male${this.name().replace('-', '')}Body.png`;
+        }
+
+        femaleBodyImg () {
+          return `Female${this.name().replace('-', '')}Body.png`;
+        }
+
+        createImageName (type, sexo) {
+            return `${sexo}${this.name().replace('-', '')}${type}.png`;
+        }
+    }
+
     function CreateCharacterViewModel() {
-        this.races = [new Race('Dwarf'), new Race('Elf'), new Race('Gnome'), new Race('Half-Elf'), new Race('Halfling'),
-            new Race('Half-Orc'), new Race('Human')];
+        this.races = [new RaceModel('Dwarf', 'Isso é um anao'), new RaceModel('Elf', 'agora um elfo'), new RaceModel('Gnome', 'agora um gnomo'),
+        new RaceModel('Half-Elf', 'olha o meio elfo ai.'), new RaceModel('Halfling', 'Halfling maroto'), new RaceModel('Half-Orc', 'Orc bruto'),
+        new RaceModel('Human', 'meh')];
 
         this.selectedRace = ko.observable();
         this.selectedSex = ko.observable('Male');
